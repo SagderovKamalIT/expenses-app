@@ -1,7 +1,389 @@
+body {
+    font-family: "Inter", serif;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 930px;
+    padding: 70px 15px 30px 15px;
+    margin: 0 auto;
+}
+
+.expenses {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 28px;
+    row-gap: 65px;
+    
+    
+}
+
+.app__header {
+font-weight: 700;
+color: #000;
+margin-bottom: 40px;
+
+
+
+}
+
+.exenses__input,
+.stats {
+    width: 500px;
+}
+
+.money__input  {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 17px 9px 22px;
+    border: 1px solid #000;
+}
+
+.category__select {
+    width: 500px;
+    margin-top: 18px;
+    height: 58px;
+    padding-left: 22px;
+    font-size: inherit;
+    appearance: none; 
+    overflow: hidden;
+    background: url('../recources/down__arrow.png') no-repeat right;
+    background-position: right 16px top 20px;
+    border: 1px solid #000;
+}
+
+.expense__input{
+    width: 100%;
+    border: none;
+    font-size: inherit;
+    outline: none;
+}
+
+
+.rub::after {
+    content: ' руб.';
+    font-size: 32px;
+}
+
+.expense__button {
+    padding: 10px 110px;
+    height: 58px;
+    font-weight: 400;
+    font-size: inherit;
+    border: none;
+    cursor: pointer;
+    background-color: #0094FF;
+    color: #fff;
+
+}
+
+.expense__button:hover,
+.clear__button:hover {
+    opacity: 0.7;
+}
+
+.change-limit__btn {
+    width: 42px;
+    height: 42px;
+    border: none;
+    background-color: transparent;
+}
+
+.popup {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    cursor: pointer;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+.popup_open {
+  opacity: 1;
+    visibility: visible;
+  }
+
+.popup__content {
+    position: relative;
+    width: 991px;
+    max-height: 100%;
+    padding: 47px 47px 234px 62px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+.popup__close-btn {
+    position: absolute;
+    background-image: url(../recources/close__btn.png);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    top: 32px;
+    right: 34px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.popup__title {
+    font-size: inherit;
+    font-weight: 700;
+    margin-bottom: 147px;
+}
+
+
+.popup__input-limit {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 28px;
+}
+
+.money__input-popup {
+    width: 484px;
+}
+
+.expense__button-popup {
+    padding: 10px 77px;
+    width: 370px;
+    
+}
+
+.stats__limit {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.stats__label {
+    font-weight: 700; 
+}
+
+.stats__changeLimitBtn {
+    width: 42px;
+    height: 42px;
+}
+
+.btn_inverted  {
+    width: 42px;
+    height: 42px; 
+}
+
+.stats__total {
+    margin-top: 13px;
+}
+
+.stats__status {
+    margin-top: 35px;
+}
+
+ol {
+    list-style: decimal;
+    list-style-position: inside;
+}
+
+li{
+    margin-bottom: 7px;
+}
+
+
+
+.history__title {
+    font-weight: 700;
+    margin-bottom: 20px;
+    width: 370px;
+}
+
+.clear__button {
+    padding: 11px 111px 8px 111px;
+    font-size: inherit;
+    border: none;
+    color: #fff;
+    background-color: #FF0000;
+}
+
+
 .status {
     color: green;
 }
 
 .status-red {
     color: red;
+}
+
+@media (max-width: 960px) {
+    body {
+        font-size: 27px;
+    }
+
+    .container {
+        max-width: 710px;
+    }
+
+    .expenses {
+        max-width: 680px;
+        row-gap: 58px;
+        column-gap: 21px;
+    }
+
+
+
+    .exenses__input, 
+    .stats {
+        width: 350px;
+    }
+
+    .category__select {
+        height: 51px;
+        width: 350px; 
+        margin-top: 13px;
+        background: url(../recources/down__arrow.png) no-repeat right;
+        background-position: right 16px top 20px;
+        background-size: 16px 12px;
+    }
+
+    .money__input {
+        padding: 7px 11px 9px 19px;
+    }
+
+    .expense__button {
+        padding: 10px 79px;
+        height: 51px;
+    }
+
+    .stats__changeLimitBtn {
+        width: 34px;
+        height: 34px;
+    }
+
+    .stats__status {
+        margin-top: 30px;
+    }
+
+    .change-limit__btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .clear__button {
+        padding: 11px 59px 8px 59px;
+    }
+
+    .history__title {
+        width: 279px;
+        margin-bottom: 16px;
+    }
+
+    .popup__input-limit {
+        flex-direction: column;
+        flex-wrap: wrap;
+        row-gap: 22px;
+    }
+
+    .popup__content {
+        width: 620px;
+        padding: 31px 33px 155px 33px;
+       
+    }
+
+    .popup__title {
+        margin-bottom: 110px;
+    }
+
+    .popup__close-btn {
+        width: 21px;
+        height: 21px;
+
+    }
+
+    .money__input-popup,
+    .expense__button-popup {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 680px) {
+    body {
+        font-size: 24px;
+    }
+
+    .expense__button:hover,
+.clear__button:hover {
+    opacity: 1;
+}
+
+
+    .container {
+        max-width: 350px;
+        padding: 90px 15px 30px 15px;
+    }
+
+    .expenses {
+        flex-direction: column;
+        max-width: 320px;
+        row-gap: 35px;
+    }
+
+    .expense__button {
+        height: 48px;
+    }
+
+    .exenses__input, .stats {
+        width: 100%;
+    }
+
+    .category__select {
+        height: 51px;
+        width: 100%;
+        padding-left: 19px;
+    }
+
+    .rub::after {
+        font-size: 22px;
+    }
+
+    .app__header {
+        margin-bottom: 35px;
+    }
+
+    .stats__changeLimitBtn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .clear__button {
+        padding: 11px 46px 11px 46px;
+    }
+
+    .popup__content {
+        width: 320px;
+        padding: 31px 33px 100px 33px;
+    }
+
+    .popup__title {
+        margin-bottom: 70px;
+    }
+
+    .popup__close-btn {
+        width: 19px;
+        height: 19px;
+    }
+
+    .expense__button-popup {
+        padding: 10px 25px;
+    }
 }

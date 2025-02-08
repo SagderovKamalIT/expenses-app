@@ -4,24 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>expenses-app</title>
-    <link rel="stylesheet" href="styles/index.css">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="styles/reset.css">
+<link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-    <h1>Учет расходов</h1>
+    <div class="container">
+        <h1 class="app__header" >Учет расходов</h1>
+        
+        <div class="expenses">
+            <div class="exenses__input">
+                <div class="money__input rub">
+                    <input
+                    class="js-expense-input expense__input"
+                    type="number"
+                    min="1">
+        
+                </div>
+
+                <select class=" js-category__selected category__select">
+                    <option  hidden disabled selected value="Категория">
+                        Категория
+                    </option>
+                    <option value="Продукты">Продукты</option>
+                    <option value="Кафе">Кафе и рестораны</option>
+                    <option value="Квартира">Квартира</option>
+                    <option value="Аптека">Аптека</option>
+                    <option value="Развлечения">Развлечения</option>
+                    <option value="Транспорт">Траснпорт</option>
+                    <option value="Прочие расходы">Прочие расходы</option>
+                </select>
+            </div>
     
-    <input 
-    class="js-expense-input expense-input" 
-    type="number">
 
-    <button class="js-expense-button expense-button" >Добавить</button>
+              
+        <button class="js-expense-button expense__button" >Добавить</button>
+        <div class="stats">
+            <div class="stats__limit">
 
-    <p>Лимит: <span class="js-limit" >10000</span> руб.</p>
-    <p>Cумма: <span class="js-sum" ></span> руб.</p>
-    <p>Cтатус <span class="js-status status"></span></p>
+                <span class="stats__label" >Лимит:</span>
+                <span class="js-limit rub"></span>
+            
+                <button class="js-change-limit__btn change-limit__btn" > 
+    
+                    <img
+                    class="stats__changeLimitBtn  js-btn "
+                    src="recources/change__limit.png"
+                    alt="кнопка смены лимита"
+                    >
+                </button>
 
-    <h2>История</h2>
-    <div class="js-history" >
-      
+                <div class="js-popup  popup">
+                    <div class="js-popup__content popup__content">
+                        <div class="js-popup__close-btn popup__close-btn"></div>
+                        <h2 class="popup__title" >Новый лимит</h2>
+
+
+                        <div class="popup__input-limit">
+                            <div class=" money__input-popup money__input rub  ">
+                                <input
+                                class="js-popup-input expense__input"
+                                type="number"
+                                min="1">
+                            </div>
+                            <button class="js-popup-button  expense__button-popup expense__button" >Задать лимит</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats__total">
+                <span class="stats__label" >Сумма:</span>
+
+                <span class="js-sum rub" ></span>
+            </div>
+            <div class="stats__status">
+
+                <span class="stats__label" >Статус:</span>
+                <span class="js-status status"></span>
+            </div>
+        
+        </div>
+
+        <div class="history">
+            <h2 class="history__title" >История</h2>
+            <div class="js-history  history__list" >
+            
+            </div>
+        </div>
+
+        <button class=" js-clear__button clear__button">
+            Сбросить расходы
+        </button>
+
+        </div>
     </div>
 
     
